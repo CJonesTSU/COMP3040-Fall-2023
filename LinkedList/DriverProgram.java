@@ -21,7 +21,7 @@ public class DriverProgram {
         System.out.println(list);
         list.delete(12); // removes the node with data '12'
         System.out.println(list);
-        list.insert(99,23);
+        list.insert(99,23); // insert '99' after the node with data '23'
         System.out.println(list);
 
         //list.Remove();

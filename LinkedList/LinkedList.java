@@ -11,7 +11,6 @@ public class LinkedList {
 
     public void append(int d){ // makes a new node as the head
         Node temp = new Node(d, head);
-        //temp.link = head;
         head = temp;
         size++;
     } // Append method
@@ -33,6 +32,12 @@ public class LinkedList {
         return current;
     } // Seatch 
 
+    /* 
+     * It seems odd to have a search method and also a searchPrevious
+     * method. But search() return a copy of a node containing some data, searchPrevious()
+     * returns the node which will end up being the node BEFORE an inserted node.
+     * So, similar, but not identical purposes
+     */
     public Node searchPrevious(int key) {
         Node current = head;
 
@@ -69,9 +74,9 @@ public class LinkedList {
                 System.out.println("Delete failed, unable to locate key");
             }
         }
-    }
+    } // delete method
 
-        @Override
+    @Override
     public String toString(){
         Node temp = head;
         int count = 1;
@@ -81,9 +86,8 @@ public class LinkedList {
         while(temp.link != null){
             temp = temp.link;
             result = result +  String.format(" -- > Node %d: %d", count, temp.data);
-            //temp = temp.link;
         }
         return result;
-    }
+    } // toString
     
 }
