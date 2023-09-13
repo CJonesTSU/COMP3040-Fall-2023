@@ -13,4 +13,10 @@ public class Node {
         this.data = data;
         link = n;
     }
+
+    @Override
+    public String toString() {
+        String result = String.format("Node: data = %d", data );
+        return result;
+    }
 }
