@@ -1,5 +1,11 @@
 package OrderedList;
 
+/*
+ * Interesting to note that, although this is an ordered list class
+ * there is no mention of sorting in this code.
+ * If you insert it in order, you never have to sort
+ */
+
 public class OrderedList {
     private int[] arr;  // will hold our data
     private int numElem; // contains the number of elements currently in the list
