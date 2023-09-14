@@ -21,27 +21,27 @@ public class OrderedListDriver {
        System.out.println("List is now: " + ol);
 
         // // try a sucessful search
-        // int searchKey = 55;
-        // if(ol.find(searchKey) != -1) {
-        //     System.out.printf("Searched for %d and found it.%n", searchKey);
-        // } else {
-        //     System.out.printf("Searched for %d but did not find it.%n", searchKey);
-        // }
+        int searchKey = 55;
+        if(ol.find(searchKey) != -1) {
+            System.out.printf("Searched for %d and found it.%n", searchKey);
+        } else {
+            System.out.printf("Searched for %d but did not find it.%n", searchKey);
+        }
 
         // // now a failing search
-        // searchKey = 18;
-        // if(ol.find(searchKey) != -1) {
-        //     System.out.printf("Searched for %d and found it.%n", searchKey);
-        // } else {
-        //     System.out.printf("Searched for %d but did not find it.%n", searchKey);
-        // }       
+        searchKey = 18;
+        if(ol.find(searchKey) != -1) {
+            System.out.printf("Searched for %d and found it.%n", searchKey);
+        } else {
+            System.out.printf("Searched for %d but did not find it.%n", searchKey);
+        }       
 
         // print out the list
-        // System.out.println("List is currently: " + ol);
-        // ol.delete(00);
-        // ol.delete(55);
-        // ol.delete(77);
-        // System.out.println("Deleted 00, 55, 77");
-        // System.out.println("List is currently: " + ol);
+        System.out.println("List is currently: " + ol);
+        ol.delete(00);
+        ol.delete(55);
+        ol.delete(77);
+        System.out.println("Deleted 00, 55, 77");
+        System.out.println("List is currently: " + ol);
     }
 }

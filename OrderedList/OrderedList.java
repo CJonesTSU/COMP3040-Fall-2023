@@ -40,12 +40,12 @@ public class OrderedList {
     } // find
 
     public void insert(int value){
-        System.out.println("inserting");
-        System.out.println("At Start numElem is: " + numElem);
+        // System.out.println("inserting");
+        // System.out.println("At Start numElem is: " + numElem);
         int i;
         for(i = 0; i < numElem; i++){
             if(arr[i] > value){
-                System.out.printf("Inserting %d at index %d%n",value, i);
+                // System.out.printf("Inserting %d at index %d%n",value, i);
                 break; // i now contains the location one to the right of the insertion point (or numElem)
             }
         } // for loop to find where we need to insert
@@ -54,7 +54,7 @@ public class OrderedList {
         } // move items up
         arr[i] = value; // insert the value
         numElem++;
-        System.out.println("At end numElem is: " + numElem);
+        // System.out.println("At end numElem is: " + numElem);
     } // inswert
 
     public boolean delete(int value){
@@ -73,7 +73,7 @@ public class OrderedList {
     @Override
     public String toString(){
         String result = "";
-        System.out.println("numElem: " + numElem);
+        // System.out.println("numElem: " + numElem);
         for(int i = 0; i < numElem; i++){
             result = result + arr[i] + " ";
         }
