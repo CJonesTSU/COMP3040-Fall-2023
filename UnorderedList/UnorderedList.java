@@ -48,6 +48,7 @@ public class UnorderedList {
 
     @Override
     public String toString() {
+        System.out.println("numelem" + numElem);
         String result = "";
         for (int i = 0; i < numElem; i++) {
             result = result + arr[i] + " ";
