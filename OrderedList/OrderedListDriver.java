@@ -18,7 +18,7 @@ public class OrderedListDriver {
         ol.insert(44);
 
         System.out.println("finished inserting values");
-        System.out.println("List is now: " + ol);
+       System.out.println("List is now: " + ol);
 
         // // try a sucessful search
         // int searchKey = 55;
