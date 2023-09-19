@@ -23,10 +23,14 @@ public class UnorderedList {
         }
     } // find
 
-    public void insert(int value) {
+    public void append(int value) {
         arr[numElem] = value;
         numElem++;
     } // insert
+
+    public void remove(){
+        numElem--;
+    }
 
     public boolean delete(int value) {
         int i;
@@ -48,7 +52,7 @@ public class UnorderedList {
 
     @Override
     public String toString() {
-        System.out.println("numelem" + numElem);
+        System.out.println("numElem " + numElem);
         String result = "";
         for (int i = 0; i < numElem; i++) {
             result = result + arr[i] + " ";

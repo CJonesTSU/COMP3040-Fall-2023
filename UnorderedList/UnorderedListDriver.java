@@ -6,16 +6,16 @@ public class UnorderedListDriver {
         
         UnorderedList lst;
         lst = new UnorderedList(MAX_SIZE);
-        lst.insert(77);
-        lst.insert(99);
-        lst.insert(44);        
-        lst.insert(55);
-        lst.insert(22);
-        lst.insert(11);
-        lst.insert(88);
-        lst.insert(00);
-        lst.insert(66);
-        lst.insert(33);
+        lst.append(77);
+        lst.append(99);
+        lst.append(44);        
+        lst.append(55);
+        lst.append(22);
+        lst.append(11);
+        lst.append(88);
+        lst.append(00);
+        lst.append(66);
+        lst.append(33);
         System.out.println(lst);
 
         // Let's try a successful search
