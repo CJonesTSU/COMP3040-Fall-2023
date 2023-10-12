@@ -1,20 +1,15 @@
-package BinarySearchTree;
-
-public class Node {
+public class Node{
     int data;
     Node left;
     Node right;
 
-    public Node(){
-        data = 0;
+    public Node(int data){
+        this.data = data;
         left = null;
         right = null;
     }
-
-    public Node(int d){
-        data = d;
-        left = null;
-        right = null;
+    public String toString(){
+        System.out.println(data);
+        return "";
     }
-    
 }
