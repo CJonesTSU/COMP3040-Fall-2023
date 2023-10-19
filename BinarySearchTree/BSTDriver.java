@@ -23,7 +23,5 @@ public class BSTDriver{
         System.out.println(bst.search(23));
 
         System.out.println("The code ran");
-    }
-
-    
+    }    
 }

@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ReverseString {
     public static void main(String[] args) {
-        Stack theStack = new Stack(500);
         Scanner keyboard = new Scanner(System.in);
         String input = "";
         String output = "";
@@ -19,5 +18,6 @@ public class ReverseString {
             System.out.print("Enter the word to reverse (enter to end): ");
             input = keyboard.nextLine();
         } // while
+        keyboard.close();
     } // main()
 } // class
