@@ -33,7 +33,7 @@ public class BracketMatcher {
                         // System.out.println("temp is: " + temp);
                         if((ch == '}' && temp != '{') || (ch == ')' && temp != '(') ||
                            (ch == ']' && temp != '[')) { // they don't match print error msg
-                            // System.out.println("Error: " + ch + " at index " + i);
+                            System.out.println("Error: " + ch + " at index " + i);
                         } else {
                             System.out.println("all match");
                             break; // they match so nothing to do.
