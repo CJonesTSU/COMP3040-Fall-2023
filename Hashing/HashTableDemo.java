@@ -65,7 +65,7 @@ public class HashTableDemo {
             } // end switch
         } // end while
     } // end main()
-    //--------------------------------------------------------------
+
     public static String getString() throws IOException
     {
         InputStreamReader isr = new InputStreamReader(System.in);
@@ -73,17 +73,16 @@ public class HashTableDemo {
         String s = br.readLine();
         return s;
     }
-    //--------------------------------------------------------------
+
     public static char getChar() throws IOException
     {
         String s = getString();
         return s.charAt(0);
     }
-    //-------------------------------------------------------------
+
     public static int getInt() throws IOException
     {
         String s = getString();
         return Integer.parseInt(s);
     }
-//--------------------------------------------------------------
 } // end class HashTableDemo
