@@ -2,15 +2,15 @@ package Hashing;
 
 class DataItem
     { 
-    private int iData; // data item (key)
+    private int data; // data item (key)
 
-    public DataItem(int ii) // constructor
+    public DataItem(int value) // constructor
     { 
-        iData = ii; 
+        data = value; 
     }
 
     public int getKey()
     { 
-        return iData;
+        return data;
     }
 } // end class DataItem

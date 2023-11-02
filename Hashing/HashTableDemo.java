@@ -22,8 +22,7 @@ public class HashTableDemo {
         HashTable theHashTable = new HashTable(size);
         for(int j=0; j<n; j++) // insert data
         {
-            aKey = (int)(java.lang.Math.random() *
-            keysPerCell * size);
+            aKey = (int)(java.lang.Math.random() * keysPerCell * size);
             aDataItem = new DataItem(aKey);
             theHashTable.insert(aDataItem);
         }
@@ -35,19 +34,19 @@ public class HashTableDemo {
             switch(choice)
             {
                 case 's':
-                theHashTable.displayTable();
-                break;
+                    theHashTable.displayTable();
+                    break;
                 case 'i':
-                System.out.print("Enter key value to insert: ");
-                aKey = getInt();
-                aDataItem = new DataItem(aKey);
-                theHashTable.insert(aDataItem);
-                break;
+                    System.out.print("Enter key value to insert: ");
+                    aKey = getInt();
+                    aDataItem = new DataItem(aKey);
+                    theHashTable.insert(aDataItem);
+                    break;
                 case 'd':
-                System.out.print("Enter key value to delete: ");
-                aKey = getInt();
-                theHashTable.delete(aKey);
-                break;
+                    System.out.print("Enter key value to delete: ");
+                    aKey = getInt();
+                    theHashTable.delete(aKey);
+                    break;
                 case 'f':
                     System.out.print("Enter key value to find: ");
                 aKey = getInt();

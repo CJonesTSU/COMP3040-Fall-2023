@@ -35,8 +35,7 @@ public class HashTable {
         int key = item.getKey(); // extract key
         int hashVal = hashFunc(key); // hash the key
         // until empty cell or -1,
-        while (hashArray[hashVal] != null &&
-                hashArray[hashVal].getKey() != -1) {
+        while (hashArray[hashVal] != null &&  hashArray[hashVal].getKey() != -1) {
             ++hashVal; // go to next cell
             hashVal %= arraySize; // wraparound if necessary
         }
