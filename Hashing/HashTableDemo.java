@@ -11,12 +11,14 @@ public class HashTableDemo {
     {
         DataItem aDataItem;
         int aKey, size, n, keysPerCell;
+        Scanner keyboard = new Scanner(System.in);
 
         // get sizes
         System.out.print("Enter size of hash table: ");
-        size = getInt();
+        size = keyboard.nextInt();
         System.out.print("Enter initial number of items: ");
-        n = getInt();
+        n = keyboard.nextInt();
+        keyboard.nextLine(); // clear out the left over carriage return
         keysPerCell = 10;
         // make table
         HashTable theHashTable = new HashTable(size);
@@ -30,7 +32,7 @@ public class HashTableDemo {
         {
             System.out.print("Enter first letter of ");
             System.out.print("show, insert, delete, or find: ");
-            char choice = getChar();
+            char choice = keyboard.nextLine().charAt(0);
             switch(choice)
             {
                 case 's':
@@ -38,18 +40,21 @@ public class HashTableDemo {
                     break;
                 case 'i':
                     System.out.print("Enter key value to insert: ");
-                    aKey = getInt();
+                    aKey = keyboard.nextInt();
+                    keyboard.nextLine(); // clear out the left over carriage return
                     aDataItem = new DataItem(aKey);
                     theHashTable.insert(aDataItem);
                     break;
                 case 'd':
                     System.out.print("Enter key value to delete: ");
-                    aKey = getInt();
+                    aKey = keyboard.nextInt();
+                    keyboard.nextLine(); // clear out the left over carriage return
                     theHashTable.delete(aKey);
                     break;
                 case 'f':
                     System.out.print("Enter key value to find: ");
-                aKey = getInt();
+                    aKey = keyboard.nextInt();
+                    keyboard.nextLine(); // clear out the left over carriage return
 
                 aDataItem = theHashTable.find(aKey);
                 if(aDataItem != null)
@@ -65,23 +70,23 @@ public class HashTableDemo {
         } // end while
     } // end main()
 
-    public static String getString() throws IOException
-    {
-        InputStreamReader isr = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(isr);
-        String s = br.readLine();
-        return s;
-    }
+    // public static String getString() throws IOException
+    // {
+    //     InputStreamReader isr = new InputStreamReader(System.in);
+    //     BufferedReader br = new BufferedReader(isr);
+    //     String s = br.readLine();
+    //     return s;
+    // }
 
-    public static char getChar() throws IOException
-    {
-        String s = getString();
-        return s.charAt(0);
-    }
+    // public static char getChar() throws IOException
+    // {
+    //     String s = getString();
+    //     return s.charAt(0);
+    // }
 
-    public static int getInt() throws IOException
-    {
-        String s = getString();
-        return Integer.parseInt(s);
-    }
+    // public static int getInt() throws IOException
+    // {
+    //     String s = getString();
+    //     return Integer.parseInt(s);
+    // }
 } // end class HashTableDemo

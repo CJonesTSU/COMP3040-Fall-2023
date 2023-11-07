@@ -53,7 +53,7 @@ public class HashTable {
                 hashArray[hashVal] = nonItem; // delete item
                 return temp; // return item
             }
-            ++hashVal; // go to next cell
+            hashVal++; // go to next cell
             hashVal %= arraySize; // wraparound if necessary
         }
         return null; // can’t find item
@@ -66,7 +66,7 @@ public class HashTable {
         { // found the key?
             if (hashArray[hashVal].getKey() == key)
                 return hashArray[hashVal]; // yes, return item
-            ++hashVal; // go to next cell
+            hashVal++; // go to next cell
             hashVal %= arraySize; // wraparound if necessary
         }
         return null; // can’t find item
