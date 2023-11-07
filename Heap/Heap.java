@@ -32,13 +32,13 @@ class Heap
     // -------------------------------------------------------------
     public void trickleUp(int index)
     {
-        int parent = (index-1) / 2;
+        int parent = (index - 1) / 2;
         Node bottom = heapArray[index];
         while( index > 0 && heapArray[parent].getKey() < bottom.getKey() )
         {
             heapArray[index] = heapArray[parent]; // move it down
             index = parent;
-            parent = (parent-1) / 2;
+            parent = (parent - 1) / 2;
         } // end while
         heapArray[index] = bottom;
     } // end trickleUp()
@@ -95,7 +95,7 @@ class Heap
     public void displayHeap()
     {
         System.out.print("heapArray: "); // array format
-        for(int m=0; m<currentSize; m++)
+        for(int m = 0; m < currentSize; m++)
         if(heapArray[m] != null){
             System.out.print( heapArray[m].getKey() + " ");
         } else {
