@@ -8,11 +8,15 @@ public class Node {
         data = key;
     }
     // -------------------------------------------------------------
+
+
     public int getKey()
     {
         return data;
     }
     // -------------------------------------------------------------
+
+    
     public void setKey(int id)
     {
         data = id;

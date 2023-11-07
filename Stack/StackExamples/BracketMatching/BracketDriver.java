@@ -15,5 +15,6 @@ public class BracketDriver {
             BracketMatcher theMatcher = new BracketMatcher(input);
             theMatcher.match();
         } 
+        keyboard.close();
     } // main()
 } // class
