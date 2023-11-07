@@ -5,8 +5,7 @@ import java.util.Scanner;
 
 public class HashTableDemo {
 
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         DataItem aDataItem;
         int aKey, size, n, keysPerCell;
         Scanner keyboard = new Scanner(System.in);
@@ -20,19 +19,18 @@ public class HashTableDemo {
         keysPerCell = 10;
         // make table
         HashTable theHashTable = new HashTable(size);
-        for(int j=0; j<n; j++) // insert data
+        for (int j = 0; j < n; j++) // insert data
         {
-            aKey = (int)(java.lang.Math.random() * keysPerCell * size);
+            aKey = (int) (java.lang.Math.random() * keysPerCell * size);
             aDataItem = new DataItem(aKey);
             theHashTable.insert(aDataItem);
         }
-        while(true) // interact with user
+        while (true) // interact with user
         {
             System.out.print("Enter first letter of ");
             System.out.print("show, insert, delete, or find: ");
             char choice = keyboard.nextLine().charAt(0);
-            switch(choice)
-            {
+            switch (choice) {
                 case 's':
                     theHashTable.displayTable();
                     break;
@@ -54,37 +52,16 @@ public class HashTableDemo {
                     aKey = keyboard.nextInt();
                     keyboard.nextLine(); // clear out the left over carriage return
 
-                aDataItem = theHashTable.find(aKey);
-                if(aDataItem != null)
-                {
-                    System.out.println("Found " + aKey);
-                }
-                else
-                    System.out.println("Could not find " + aKey);
-                break;
+                    aDataItem = theHashTable.find(aKey);
+                    if (aDataItem != null) {
+                        System.out.println("Found " + aKey);
+                    } else
+                        System.out.println("Could not find " + aKey);
+                    break;
                 default:
-                System.out.print("Invalid entry\n");
+                    System.out.print("Invalid entry\n");
             } // end switch
         } // end while
     } // end main()
 
-    // public static String getString() throws IOException
-    // {
-    //     InputStreamReader isr = new InputStreamReader(System.in);
-    //     BufferedReader br = new BufferedReader(isr);
-    //     String s = br.readLine();
-    //     return s;
-    // }
-
-    // public static char getChar() throws IOException
-    // {
-    //     String s = getString();
-    //     return s.charAt(0);
-    // }
-
-    // public static int getInt() throws IOException
-    // {
-    //     String s = getString();
-    //     return Integer.parseInt(s);
-    // }
 } // end class HashTableDemo

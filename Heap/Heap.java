@@ -15,16 +15,18 @@ class Heap
     // -------------------------------------------------------------
     public boolean isEmpty()
     {
-        return currentSize==0;
+        return currentSize == 0;
     }
     // -------------------------------------------------------------
     public boolean insert(int key)
     {
-        if(currentSize==maxSize)
+        if(currentSize==maxSize) {
             return false;
+        }
         Node newNode = new Node(key);
         heapArray[currentSize] = newNode;
-        trickleUp(currentSize++);
+        trickleUp(currentSize);
+        currentSize++;
         return true;
     } // end insert()
     // -------------------------------------------------------------
@@ -79,25 +81,26 @@ class Heap
     // -------------------------------------------------------------
     public boolean change(int index, int newValue)
     {
-    if(index<0 || index>=currentSize)
-    return false;
-    int oldValue = heapArray[index].getKey(); // remember old
-    heapArray[index].setKey(newValue); // change to new
-    if(oldValue < newValue) // if raised,
-    trickleUp(index); // trickle it up
-    else // if lowered,
-    trickleDown(index); // trickle it down
-    return true;
+        if(index<0 || index>=currentSize)
+            return false;
+        int oldValue = heapArray[index].getKey(); // remember old
+        heapArray[index].setKey(newValue); // change to new
+        if(oldValue < newValue) // if raised,
+            trickleUp(index); // trickle it up
+        else // if lowered,
+            trickleDown(index); // trickle it down
+        return true;
     } // end change()
     // -------------------------------------------------------------
     public void displayHeap()
     {
         System.out.print("heapArray: "); // array format
         for(int m=0; m<currentSize; m++)
-        if(heapArray[m] != null)
-        System.out.print( heapArray[m].getKey() + " ");
-        else
-        System.out.print( "-- ");
+        if(heapArray[m] != null){
+            System.out.print( heapArray[m].getKey() + " ");
+        } else {
+            System.out.print( "-- ");
+        }
         System.out.println();
         // heap format
         int nBlanks = 32;
@@ -108,24 +111,26 @@ class Heap
         System.out.println(dots+dots); // dotted top line
         while(currentSize > 0) // for each heap item
         {
-        if(column == 0) // first item in row?
-        for(int k=0; k<nBlanks; k++) // preceding blanks
-            System.out.print(' ');
-        // display item
-        System.out.print(heapArray[j].getKey());
-
-        if(++j == currentSize) // done?
-            break;
-        if(++column==itemsPerRow) // end of row?
-        {
-            nBlanks /= 2; // half the blanks
-            itemsPerRow *= 2; // twice the items
-            column = 0; // start over on
-            System.out.println(); // new row
+            if(column == 0) { // first item in row?
+                for(int k = 0; k < nBlanks; k++) { // preceding blanks
+                    System.out.print(' ');
+                }
             }
-            else // next item on row
-            for(int k=0; k<nBlanks*2-2; k++)
-                System.out.print(' '); // interim blanks
+            // display item
+            System.out.print(heapArray[j].getKey());
+
+            if(++j == currentSize) // done?
+                break;
+            if(++column==itemsPerRow) { // end of row?
+                nBlanks /= 2; // half the blanks
+                itemsPerRow *= 2; // twice the items
+                column = 0; // start over on
+                System.out.println(); // new row
+            } else {  // next item on row
+                for(int k = 0; k <nBlanks * 2 - 2; k++) {
+                    System.out.print(' '); // interim blanks
+                }
+            }
         } // end for
         System.out.println("\n" + dots + dots); // dotted bottom line
     } // end displayHeap()

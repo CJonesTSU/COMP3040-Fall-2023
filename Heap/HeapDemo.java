@@ -3,6 +3,7 @@ package Heap;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class HeapDemo {
 
@@ -10,6 +11,7 @@ public class HeapDemo {
     {
         int value, value2;
         Heap theHeap = new Heap(31); // make a Heap; max size 31
+        Scanner keyboard = new Scanner(System.in);
         boolean success;
         theHeap.insert(70); // insert 10 items
         theHeap.insert(40);
@@ -25,8 +27,8 @@ public class HeapDemo {
         {
             System.out.print("Enter first letter of ");
 
-            System.out.print("show, insert, remove, change: ");
-            int choice = getChar();
+            System.out.print("(s)how, (i)nsert, (r)emove, (c)hange: ");
+            char choice = keyboard.nextLine().charAt(0);
             switch(choice)
             {
                 case 's': // show
@@ -34,7 +36,8 @@ public class HeapDemo {
                     break;
                 case 'i': // insert
                     System.out.print("Enter value to insert: ");
-                    value = getInt();
+                    value = keyboard.nextInt();
+                    keyboard.nextLine(); // just clearing out the queue
                     success = theHeap.insert(value);
                     if( !success )
                         System.out.println("Can't insert; heap full");
@@ -47,9 +50,10 @@ public class HeapDemo {
                     break;
                 case 'c': // change
                     System.out.print("Enter current index of item: ");
-                    value = getInt();
+                    value = keyboard.nextInt();
                     System.out.print("Enter new key: ");
-                    value2 = getInt();
+                    value2 = keyboard.nextInt();
+                    keyboard.nextLine(); // just clearing out the queue
                     success = theHeap.change(value, value2);
                     if( !success )
                         System.out.println("Invalid index");
@@ -60,24 +64,24 @@ public class HeapDemo {
             } // end while
     } // end main()
     //-------------------------------------------------------------
-    public static String getString() throws IOException
-    {
-        InputStreamReader isr = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(isr);
-        String s = br.readLine();
-        return s;
-    }
-    //-------------------------------------------------------------
-    public static char getChar() throws IOException
-    {
-        String s = getString();
-        return s.charAt(0);
-    }
-    //-------------------------------------------------------------
-    public static int getInt() throws IOException
-    {
-        String s = getString();
-        return Integer.parseInt(s);
-    }
+    // public static String getString() throws IOException
+    // {
+    //     InputStreamReader isr = new InputStreamReader(System.in);
+    //     BufferedReader br = new BufferedReader(isr);
+    //     String s = br.readLine();
+    //     return s;
+    // }
+    // //-------------------------------------------------------------
+    // public static char getChar() throws IOException
+    // {
+    //     String s = getString();
+    //     return s.charAt(0);
+    // }
+    // //-------------------------------------------------------------
+    // public static int getInt() throws IOException
+    // {
+    //     String s = getString();
+    //     return Integer.parseInt(s);
+    // }
 //-------------------------------------------------------------
 } // end class HeapApp  
