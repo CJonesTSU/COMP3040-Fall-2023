@@ -1,4 +1,4 @@
-package Hashing;
+package Hashing.QuadraticProbing;
 
 import java.io.IOException;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package Hashing;
+package Hashing.QuadraticProbing;
 
 class DataItem
     { 

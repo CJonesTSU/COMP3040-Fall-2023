@@ -1,4 +1,4 @@
-package Hashing;
+package Hashing.QuadraticProbing;
 
 public class HashTable {
     private DataItem[] hashArray; // array holds hash table
@@ -32,12 +32,14 @@ public class HashTable {
     public void insert(DataItem item) // insert a DataItem
     // (assumes table not full)
     {
+        int step_num = 1;
         int key = item.getKey(); // extract key
         int hashVal = hashFunc(key); // hash the key
         // until empty cell or -1,
         while (hashArray[hashVal] != null &&  hashArray[hashVal].getKey() != -1) {
-            hashVal++; // go to next cell
+            hashVal = hashVal + (int)Math.pow(step_num,2); // go to next cell
             hashVal %= arraySize; // wraparound if necessary
+            step_num++;
         }
         hashArray[hashVal] = item; // insert item
     } // end insert()
