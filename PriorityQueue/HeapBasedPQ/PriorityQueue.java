@@ -9,7 +9,8 @@ public class PriorityQueue {
     //-------------------------------------------------------------
     public PriorityQueue(int s) // constructor
     {
-        Heap theHeap = new Heap(s);
+        //Heap theHeap = new Heap(s);
+        theHeap = new Heap(s);
         System.out.println("PQ constructor");
     }
     //-------------------------------------------------------------

@@ -12,12 +12,12 @@ class Heap
         currentSize = 0;
         heapArray = new Node[maxSize]; // create array
         // System.out.println("Heap size: " + heapArray.length);
-        System.out.println("Heap construtor heap size: " + heapArray.length);
+        //System.out.println("Heap construtor heap size: " + heapArray.length);
     }
     // -------------------------------------------------------------
     public boolean isEmpty()
     {
-        return false; //currentSize == 0;
+        return currentSize == 0;
     }
     // -------------------------------------------------------------
     public boolean insert(int key)
@@ -48,6 +48,7 @@ class Heap
     public Node remove() // delete item with max key
     { // (assumes non-empty list)
         Node root = heapArray[0];
+        System.out.println("currentSize " + currentSize);
         heapArray[0] = heapArray[--currentSize];
         trickleDown(0);
         return root;
