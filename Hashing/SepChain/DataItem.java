@@ -1,4 +1,4 @@
-package Hashing;
+package Hashing.SepChain;
 
 class DataItem
     { 

@@ -1,4 +1,4 @@
-package LinkedList;
+package Hashing.SepChain;
 
 public class Node {
     public int data;

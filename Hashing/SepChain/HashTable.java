@@ -1,4 +1,4 @@
-package Hashing;
+package Hashing.SepChain;
 
 public class HashTable {
     private DataItem[] hashArray; // array holds hash table

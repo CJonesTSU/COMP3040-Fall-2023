@@ -1,4 +1,4 @@
-package Hashing;
+package Hashing.SepChain;
 
 import java.io.IOException;
 import java.util.Scanner;
