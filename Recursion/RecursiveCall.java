@@ -1,4 +1,4 @@
-package HeapRecursive.Recursion;
+package Recursion;
 
 public class RecursiveCall {
     public static void main(String[] args){

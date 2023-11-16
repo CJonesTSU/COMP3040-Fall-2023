@@ -3,7 +3,7 @@ package HeapRecursive;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class HeapDemo {
+public class HeapDemoRecursive {
 
     public static void main(String[] args) throws IOException
     {
@@ -25,7 +25,7 @@ public class HeapDemo {
         {
             System.out.print("Enter first letter of ");
 
-            System.out.print("(s)how, (i)nsert, (r)emove, (c)hange: ");
+            System.out.print("(s)how, (i)nsert, (r)emove, (c)hange, (h)eapify: ");
             char choice = keyboard.nextLine().charAt(0);
             switch(choice)
             {
@@ -55,6 +55,9 @@ public class HeapDemo {
                     success = theHeap.change(value, value2);
                     if( !success )
                         System.out.println("Invalid index");
+                    break;
+                case 'h': // heapify
+                    theHeap.heapify(0);
                     break;
                 default:
                     System.out.println("Invalid entry\n");

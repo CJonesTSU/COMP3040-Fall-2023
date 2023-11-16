@@ -20,6 +20,7 @@ class Heap
     // -------------------------------------------------------------
     public boolean insert(int key)
     {
+        System.out.println("in insert, currentSize is: " + currentSize);
         if(currentSize==maxSize) {
             return false;
         }
@@ -30,15 +31,6 @@ class Heap
         return true;
     } // end insert()
     // -------------------------------------------------------------
-
-    private void heapify(int index) // transform array into heap
-    {
-        if(index > currentSize/2-1) // if node has no children,
-            return; // return
-        heapify(index*2+2); // turn right subtree into heap
-        heapify(index*2+1); // turn left subtree into heap
-        trickleDown(index); // apply trickle-down to this node
-    }
     // public void trickleUp(int index)
     // {
     //     int parent = (index - 1) / 2;
@@ -51,7 +43,7 @@ class Heap
     //     } // end while
     //     heapArray[index] = bottom;
     // } // end trickleUp()
-    // // -------------------------------------------------------------
+    // -------------------------------------------------------------
     public Node remove() // delete item with max key
     { // (assumes non-empty list)
         Node root = heapArray[0];
@@ -59,6 +51,17 @@ class Heap
         trickleDown(0);
         return root;
     } // end remove()
+
+   public void heapify(int index) // transform array into heap
+    {
+        System.out.println("index: " + index + " currentSize/2 + 1: " + (currentSize/2 + 1));
+        if(index > (currentSize/2 + 1)) { // if node has no children,
+            return; // return
+        }
+        heapify(index*2+2); // turn right subtree into heap
+        heapify(index*2+1); // turn left subtree into heap
+        trickleDown(index); // apply trickle-down to this node
+    }
     // -------------------------------------------------------------
     public void trickleDown(int index)
     {
