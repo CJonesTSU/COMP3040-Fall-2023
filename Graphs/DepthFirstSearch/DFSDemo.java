@@ -9,9 +9,11 @@ public class DFSDemo {
         theGraph.addVertex('D'); // 3
         theGraph.addVertex('E'); // 4
         theGraph.addEdge(0, 1); // AB
+        theGraph.addEdge(0,2); // AC
+        theGraph.addEdge(0,4); // AE
         theGraph.addEdge(1, 2); // BC
-        theGraph.addEdge(0, 3); // AD
-        theGraph.addEdge(3, 4); // DE
+        theGraph.addEdge(1, 3); // BD
+
         System.out.print("Visits: ");
         theGraph.dfs(); // depth-first search
         System.out.println();
